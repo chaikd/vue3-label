@@ -3,6 +3,10 @@
 底层用到了fabricjs库
 
 # 使用
+在项目中安装依赖包
+```
+npm install vue3-label
+```
 在全局引入canvasLabel组件
 ```
 // main.js
