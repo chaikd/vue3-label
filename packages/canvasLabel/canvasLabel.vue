@@ -14,7 +14,7 @@ import { Annotator, fabricModify } from '../services/index'
 import {onMounted, Reactive, reactive, ref, watch} from 'vue'
 import { useLabelToolService } from '../services/labelToolService.js';
 import { computed } from 'vue';
-import { EditorStatus, LabelToolService } from '../services/labelToolService.d';
+import { EditorStatus, LabelToolService } from '../services/labelToolService.type.js';
 import { setLabelToolEmiter } from './setEmiter.js';
 
 const props = defineProps({

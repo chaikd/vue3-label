@@ -1,5 +1,5 @@
 import { onMounted, onUnmounted } from "vue";
-import { LabelToolService as toolService } from "../services/labelToolService.d";
+import { LabelToolService as toolService } from "../services/labelToolService.type";
 
 export function setLabelToolEmiter(toolService: toolService) {
   const onAddLabel = (labelName: string) => {

@@ -3,10 +3,10 @@ import { Canvas, Image, Object } from "fabric/fabric-impl";
 
 // export type fabricModify = 
 // 键盘状态
-interface KeyStatus {
-  moveKey: string; // 移动图片的辅助键名
-  isCommand: boolean; // command键是否按下
-}
+// interface KeyStatus {
+//   moveKey: string; // 移动图片的辅助键名
+//   isCommand: boolean; // command键是否按下
+// }
 export interface Annotator {
   fabricCanvas: Canvas;
   hasActiveObject: boolean;

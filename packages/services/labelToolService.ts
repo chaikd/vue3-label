@@ -1,6 +1,6 @@
 import { App, inject, reactive } from "vue";
 import {eventBus as eventBusControl} from '../tools/eventBus.js'
-import { LabelToolService as toolService } from "./labelToolService.d";
+import { LabelToolService as toolService } from "./labelToolService.type.js";
 
 const labelToolServiceToken = '__LabelToolService__'
 function createLabelToolService() {
