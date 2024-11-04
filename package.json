@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "type": "module",
   "main": "dist/vue3-label.umd.js",
-  "module": "dist/vue3-label.es.js",
+  "module": "dist/vue3-label.js",
   "types": "dist/lib/index.d.ts",
   "files": [
     "dist/*"
