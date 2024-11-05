@@ -30,6 +30,12 @@ class LabelToolService {
       activeFrame: {}
     })
   }
+  get frameInfo() {
+    return this.editorStatus.annotator.frameInfo
+  }
+  get activeFrame() {
+    return this.editorStatus.activeFrame
+  }
   addLabel(labelName: string) {
     this.eventBus.$emit('addLabel', labelName)
   }
@@ -56,6 +62,9 @@ class LabelToolService {
   }
   clearAllEmits() {
     this.eventBus.$clear()
+  }
+  setType(type) {
+    this.editorStatus.toolStatus.type = type
   }
   install(app: App) {
     app.provide(labelToolServiceToken, this)

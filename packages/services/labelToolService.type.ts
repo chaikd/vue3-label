@@ -22,6 +22,8 @@ export interface EditorStatus {
 export interface LabelToolService {
   eventBus: Reactive<EventBus>;
   editorStatus: EditorStatus;
+  frameInfo: Array<object>;
+  activeFrame: object;
   addLabel: (cb) => void;
   onAddLabel: (cb: string | object) => void;
   rerender: (cb) => void;
@@ -31,6 +33,7 @@ export interface LabelToolService {
   setActiveObj: (cb) => void;
   onSetActiveObj: (cb) => void;
   clearAllEmits: () => void;
+  setType: (type: string) => void;
   install: installFn;
 }
 // export function useLabelToolService(): LabelToolService;

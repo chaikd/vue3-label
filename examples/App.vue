@@ -38,10 +38,10 @@ const state = reactive({
   imageUrl: imgArr.value[0]
 })
 function changeType(type: string) {
-  toolService.editorStatus.toolStatus.type = type
+  toolService.setType(type)
 }
 function getData() {
-  console.log(toolService.editorStatus.annotator.frameInfo)
+  console.log(toolService.frameInfo)
 }
 function addLabel() {
   toolService.addLabel('123')
@@ -50,7 +50,7 @@ function nextPhoto() {
   state.imageUrl = imgArr.value[imgIndex.value]
 }
 function deleteFrame() {
-  toolService.deleteFrame(toolService.editorStatus.annotator.currentActiveObject)
+  toolService.deleteFrame(toolService.activeFrame)
 }
 </script>
 
