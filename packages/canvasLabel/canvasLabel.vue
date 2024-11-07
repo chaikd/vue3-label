@@ -143,7 +143,7 @@ const addKeyEventListener = () => {
     // delete删除选中的框
     if (e.keyCode === 8) {
       if (toolService.editorStatus.annotator.currentActiveObject) {
-        toolService.deleteFrame(toolService.editorStatus.annotator.currentActiveObject)
+        toolService.deleteFrame()
       }
     }
   })

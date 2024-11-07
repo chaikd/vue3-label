@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "build:examples": "vue-tsc -b && vite build -c ./vite.example.config.ts",
     "preview": "vite preview"
   },
   "dependencies": {

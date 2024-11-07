@@ -10,8 +10,8 @@ export function setLabelToolEmiter(toolService: toolService) {
   const onRender = () => {
     toolService?.editorStatus.annotator.rerender()
   }
-  const onDeleteFrame = (obj: object) => {
-    toolService?.editorStatus.annotator.removeObj(obj)
+  const onDeleteFrame = (obj?: object) => {
+    toolService?.editorStatus.annotator.removeObj(obj || toolService?.editorStatus.annotator.currentActiveObject)
     toolService?.editorStatus.annotator.rerender()
   }
   const onSetActiveObj = (obj: object) => {

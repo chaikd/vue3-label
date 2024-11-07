@@ -164,7 +164,6 @@ class Annotator {
       drawStatus = this._drawStatus,
       keyStatus = this._keyStatus,
       toolStatus = this._toolStatus
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let _clipboardFrames: any[] = []
     fabric.util.addListener(this._canvasContainer, 'mousewheel', options => {
       // if (options.target.toElement !== canvas.upperCanvasEl) return;
