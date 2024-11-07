@@ -34,14 +34,14 @@ createApp(App).use(labelToolService).use(vueLabel).mount('#app')
 import {useLabelToolService} from 'vue3-label'
 const toolService = useLabelToolService()
 //  支持的画框类型  'rect' | 'polygon' | 'point' | 'brush' | 'polyline'
-toolService.editorStatus.toolStatus.type = 'ract'
+toolService.setType('ract') 
 
 // 获取画框信息
-toolService.editorStatus.annotator.frameInfo
+toolService.frameInfo
 
 // 给当前选中画框添加标签
 toolService.addLabel(<labelName>)
 
 // 删除选中画框
-toolService.deleteFrame(toolService.editorStatus.annotator.currentActiveObject)
+toolService.deleteFrame()
 ```
