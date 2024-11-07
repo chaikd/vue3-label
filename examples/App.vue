@@ -8,7 +8,7 @@
           </div> -->
           <div class="card">
             <div class="card-header">
-              <h2>画框类型</h2>
+              <h2>画框类型(e键结束多边形画框)</h2>
             </div>
             <div class="card-body">
               <div class="tool-grid">
@@ -60,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref,toValue, computed, reactive, onMounted, onUnmounted } from 'vue'
+import { ref,computed, reactive, onMounted } from 'vue'
 import { useLabelToolService } from '../packages/services/labelToolService';
 
 const toolService = useLabelToolService()
@@ -108,7 +108,7 @@ function changeType(type: string) {
   toolService.setType(type)
 }
 function getData() {
-  alert(toolService.frameInfo)
+  console.log(toolService.frameInfo)
 }
 function addLabel() {
   toolService.addLabel('123')

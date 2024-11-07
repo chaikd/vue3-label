@@ -48,10 +48,10 @@ class LabelToolService {
   onRerender(cb: () => void) {
     this.eventBus.$on('rerender', cb)
   }
-  deleteFrame(obj: object) {
+  deleteFrame(obj?: object) {
     this.eventBus.$emit('deleteFrame', obj)
   }
-  onDeleteFrame(cb: (obj: object | string) => void) {
+  onDeleteFrame(cb: (obj?: object | string) => void) {
     this.eventBus.$on('deleteFrame', cb)
   }
   setActiveObj(obj: object) {

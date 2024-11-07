@@ -28,7 +28,7 @@ export interface LabelToolService {
   onAddLabel: (cb: string | object) => void;
   rerender: (cb) => void;
   onRerender: (cb) => void;
-  deleteFrame: (cb) => void;
+  deleteFrame: (cb?) => void;
   onDeleteFrame: (cb) => void;
   setActiveObj: (cb) => void;
   onSetActiveObj: (cb) => void;
