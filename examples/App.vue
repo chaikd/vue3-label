@@ -30,6 +30,9 @@
                   <!-- {{ tool.label }} -->
                 </button>
               </div>
+              <div class="tool-status">
+                <button class="tool-button" @click="swatchRectRotate">切换矩形旋转</button>
+              </div>
             </div>
           </div>
           <div class="canvas-wrapper">
@@ -126,6 +129,11 @@ function nextPhoto() {
 }
 function deleteFrame() {
   toolService.deleteFrame()
+}
+function swatchRectRotate() {
+  toolService.setConfig({
+    isRectRotation: !toolService.toolStatus.isRectRotation
+  })
 }
 </script>
 
@@ -247,6 +255,9 @@ h1 {
 .icon svg {
   width: 100%;
   height: 100%;
+}
+.tool-status {
+  margin-top: 10px;
 }
 
 @media (max-width: 1024px) {

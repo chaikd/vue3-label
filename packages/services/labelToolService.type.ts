@@ -24,6 +24,9 @@ export interface LabelToolService {
   editorStatus: EditorStatus;
   frameInfo: Array<object>;
   activeFrame: object;
+  toolStatus: {
+    isRectRotation: boolean
+  };
   addLabel: (cb) => void;
   onAddLabel: (cb: string | object) => void;
   rerender: (cb) => void;
@@ -35,6 +38,7 @@ export interface LabelToolService {
   clearAllEmits: () => void;
   setType: (type: string) => void;
   install: installFn;
+  setConfig: (object) => void;
 }
 // export function useLabelToolService(): LabelToolService;
 // export function createLabelToolService(): LabelToolService;

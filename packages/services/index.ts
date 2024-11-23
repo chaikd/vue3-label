@@ -131,6 +131,7 @@ class Annotator {
         hideLabel: null, // 是否隐藏标签名称
         rectArea: true, // 是否矩形面积限制
         type: '', // 当前的工具类型
+        isRectRotation: false, // 矩形旋转
         onlySelected: false // 仅支持选中框
       },
       {
@@ -593,6 +594,9 @@ class Annotator {
       // eslint-disable-next-line no-prototype-builtins
       if (this._toolStatus.hasOwnProperty(propKey) && oldVal !== newVal) {
         this._toolStatus[propKey] = newVal
+        if (propKey === 'isRectRotation') {
+          this._resetRateRotation()
+        }
       }
     })
   }
@@ -830,9 +834,7 @@ class Annotator {
       // label: this.labelName || undefined,
       ...option
     })
-    // if (this._fabricCanvas.getObjects().length < 3) {
-    //   obj.setControlsVisibility({ mtr: true })
-    // }
+    obj.setControlsVisibility({ mtr: this._toolStatus.isRectRotation })
     obj.on('scaling', e => {
       const obj = e.transform.target
       const width = obj.scaleX * obj.width
@@ -1050,6 +1052,16 @@ class Annotator {
     // const imgInterface = this.imgObj
     // imgInterface.hoverCursor = cursor
     // imgInterface.defaultCursor = cursor
+  }
+
+  _resetRateRotation() {
+    this._fabricCanvas.getObjects().forEach(obj => {
+      if (obj.type === 'labelRect') {
+        const newObj = this._getRectObj(obj)
+        this._setCornerStyle(newObj)
+        this._fabricCanvas.renderAll()
+      }
+    })
   }
 
   // 消息通知
